@@ -1,3 +1,9 @@
+import axios, {
+  AxiosResponse,
+  AxiosError,
+}
+from "axios";
+
 function performGetRequest1() {
     var resultElement = document.getElementById('getResult1');
     resultElement.innerHTML = '';
@@ -34,7 +40,7 @@ function performGetRequest1() {
 
   function performGetRequest2() {
     var resultElement = document.getElementById('getResult2');
-    var todoId = document.getElementById('todoId').value;
+    var todoId = document.getElementById('todoId');
     resultElement.innerHTML = '';
     
     axios.get('http://jsonplaceholder.typicode.com/todos', {
@@ -54,7 +60,7 @@ function performGetRequest1() {
   document.getElementById('todoInputForm').addEventListener('submit', performPostRequest);
 function performPostRequest(e) {
   var resultElement = document.getElementById('postResult');
-  var todoTitle = document.getElementById('todoTitle').value;
+  var todoTitle = document.getElementById('todoTitle');
   resultElement.innerHTML = '';
   
   axios.post('http://jsonplaceholder.typicode.com/todos', {
